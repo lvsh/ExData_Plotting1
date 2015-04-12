@@ -11,15 +11,12 @@ t <- strptime(paste(dt$Date,dt$Time),"%d/%m/%Y %H:%M:%S")
 
 # Create third plot
 x <- as.numeric(dt$Sub_metering_1)
-x <- x[!is.na(x)]
 par(pty="s",ps=12,mfrow=c(1,1))
 plot(t,x,ylab="Energy sub metering",xlab="",type="n")
 lines(t,x,type="l",col="black")
 x <- as.numeric(dt$Sub_metering_2)
-x <- x[!is.na(x)]
 lines(t,x,type="l",col="red")
 x <- as.numeric(dt$Sub_metering_3)
-x <- x[!is.na(x)]
 lines(t,x,type="l",col="blue")
 
 # Getting legend to look right is tricky! It also looks different on screen and in PNG.
